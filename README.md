@@ -1,12 +1,10 @@
-# Oscars.watch
+# Spooky.pictures 
 
-This is an Oscars fan site! Still under construction.
+This is a horror movie fan site! Still under construction.
 
 ## To do
 
-- Best song category
-- Reviews for all nominated performances
-- "Oscar clips" for all nominated performances
+- Convert Oscars code to horror
 
 ## Nerd stuff
 

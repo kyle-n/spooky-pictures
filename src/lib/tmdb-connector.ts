@@ -7,7 +7,7 @@ import type { TMDBVideo } from './types/tmdb-video';
 class TMDBConnector {
   private readToken: string;
   constructor() {
-    this.readToken = process.env.VITE_TMDB_API_READ_TOKEN as string;
+    this.readToken = import.meta.env.VITE_TMDB_API_READ_TOKEN as string;
     if (!this.readToken) {
       throw new Error('VITE_TMDB_API_READ_TOKEN is not defined');
     }

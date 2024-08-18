@@ -1,6 +1,6 @@
 <header>
   <a href="/">
-    <h1><span id="oscars">Oscars</span>.<span id="watch">watch</span></h1>
+    <h1><span id="spooky">Spooky</span>.<span id="pictures">pictures</span></h1>
   </a>
 </header>
 
@@ -17,11 +17,11 @@
     }
   }
 
-  #oscars {
+  #spooky {
     font-weight: bold;
   }
 
-  #watch {
+  #pictures {
     font-weight: normal;
     font-style: italic;
   }

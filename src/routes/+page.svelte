@@ -7,7 +7,7 @@
   let { data } = $props<{ data: ResolvedOscarCategoryList }>();
 </script>
 
-<PageTitle content="Oscars.watch" />
+<PageTitle content="Home" />
 
 {#each data.categories as category}
   <section>

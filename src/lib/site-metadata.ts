@@ -1,1 +1,1 @@
-export const SITE_NAME = 'Oscars.watch';
+export const SITE_NAME = 'Spooky Pictures';
