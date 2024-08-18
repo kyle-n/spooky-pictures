@@ -19,7 +19,7 @@ export async function load(): Promise<ResolvedOscarCategoryList> {
     if ((list as HomepageMovieList).tmdbId !== undefined) {
       categories.push(await getOscarCategory(list as HomepageMovieList));
     }
-    if ((list as HomepagePersonList).ids !== undefined) {
+    if ((list as HomepagePersonList).tmdbIds !== undefined) {
       categories.push(await getPeopleCategory(list as HomepagePersonList));
     }
   }
@@ -44,7 +44,7 @@ async function getPeopleCategory(
     name: list.name,
     people: []
   };
-  for await (const personId of list.ids) {
+  for await (const personId of list.tmdbIds) {
     peopleCategory.people.push(await TMDBConnector.getPersonDetails(personId));
   }
   return peopleCategory;

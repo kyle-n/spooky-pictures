@@ -9,5 +9,5 @@ export type HomepageMovieList = {
 export type HomepagePersonList = {
   order: number;
   name: string;
-  ids: number[];
+  tmdbIds: number[];
 };
