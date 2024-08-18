@@ -1,0 +1,53 @@
+{
+  "name": "oscars.watch",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "npm run test:integration && npm run test:unit",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write .",
+    "test:integration": "playwright test",
+    "test:unit": "vitest"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.28.1",
+    "@sveltejs/adapter-vercel": "^3.1.0",
+    "@sveltejs/kit": "^1.27.4",
+    "@types/isomorphic-fetch": "^0.0.39",
+    "@types/showdown": "^2.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-svelte": "^2.30.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-svelte": "^3.1.0",
+    "sass": "^1.69.5",
+    "svelte": "^5.0.0-next.1",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.2",
+    "vitest": "^0.32.2"
+  },
+  "type": "module",
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.1.2",
+    "@vercel/speed-insights": "^1.0.7",
+    "dayjs": "^1.11.10",
+    "isomorphic-fetch": "^3.0.0",
+    "showdown": "^2.1.0"
+  }
+}
