@@ -13,6 +13,7 @@
   <section>
     <h2>{category.name}</h2>
     {#if category.movies}
+      <p>{category.description}</p>
       <MovieList movies={category.movies} />
     {:else}
       <PeopleList peopleCategory={category} />

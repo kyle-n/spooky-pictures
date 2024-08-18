@@ -8,8 +8,6 @@ import type {
   PeopleCategory,
   ResolvedOscarCategoryList
 } from '$lib/types/resolved-data';
-import type { TMDBList } from '$lib/types/tmdb-list';
-import type { TMDBMovieDetails } from '$lib/types/tmdb-movie-details';
 import { removeYearFromListName } from '$lib/utils';
 import { homepageLists } from '../details/lists';
 
@@ -33,6 +31,7 @@ async function getOscarCategory(
   const tmdbList = await TMDBConnector.getList(list.tmdbId);
   return {
     name: removeYearFromListName(tmdbList.name),
+    description: tmdbList.description,
     movies: tmdbList.items
   };
 }

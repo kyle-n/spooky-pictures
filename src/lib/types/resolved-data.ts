@@ -6,6 +6,7 @@ import type { TMDBWatchProvidersResponse } from './tmdb-watch-provider';
 
 export type OscarCategory = {
   name: string;
+  description: string;
   movies: TMDBMovie[];
 };
 
