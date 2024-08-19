@@ -12,15 +12,18 @@
   );
 
   $effect(() => {
-    const desktopMetadataContainer = document.getElementById('desktop-metadata') as HTMLDivElement;
+    const desktopMetadataContainer = document.getElementById(
+      'desktop-metadata'
+    ) as HTMLDivElement;
     const bannerSection = document.getElementById('banner') as HTMLElement;
     if (desktopMetadataContainer.clientHeight > bannerSection.clientHeight) {
-      bannerSection.style.height = (desktopMetadataContainer.clientHeight + 50) + 'px';
+      bannerSection.style.height =
+        desktopMetadataContainer.clientHeight + 50 + 'px';
     }
-  })
+  });
 </script>
 
-<PageTitle content="{data.details.title}" />
+<PageTitle content={data.details.title} />
 
 <section id="banner" style="background-image: url('{bannerUrl}')">
   <div id="desktop-metadata">
