@@ -11,6 +11,17 @@
 
   let watchProvidersForSelectedLocale: TMDBLocaleWatchProviders | undefined =
     $derived(response.results[selectedLocale]);
+  const streaming = $derived(watchProvidersForSelectedLocale?.flatrate ?? []);
+  const buying = $derived(watchProvidersForSelectedLocale?.buy ?? []);
+  const renting = $derived(watchProvidersForSelectedLocale?.rent ?? []);
+
+  const providerCategories = $derived(
+    [
+      { name: 'Streaming', providers: streaming },
+      { name: 'Buy', providers: buying },
+      { name: 'Rent', providers: renting }
+    ].filter(category => category.providers.length > 0)
+  );
 
   const englishRegionNames = new Intl.DisplayNames(['en'], { type: 'region' });
 </script>
@@ -30,12 +41,17 @@
       target="_blank"
       referrerpolicy="no-referrer"
     >
-      {#each watchProvidersForSelectedLocale.flatrate ?? [] as provider}
-        <div class="provider">
-          <img
-            src={`https://image.tmdb.org/t/p/w45${provider.logo_path}`}
-            alt={provider.provider_name}
-          />
+      {#each providerCategories as providerCategory}
+        <h4>{providerCategory.name}</h4>
+        <div class="provider-category">
+          {#each providerCategory.providers as provider}
+            <div class="provider">
+              <img
+                src={`https://image.tmdb.org/t/p/w45${provider.logo_path}`}
+                alt={provider.provider_name}
+              />
+            </div>
+          {/each}
         </div>
       {/each}
     </a>
@@ -43,14 +59,20 @@
 </div>
 
 <style lang="scss">
-  #providers-list a {
-    display: flex;
-    flex-wrap: wrap;
-
-    .provider {
+  #providers-list {
+    h4 {
       margin: 0.5rem;
-      img {
-        height: 50px;
+    }
+    .provider-category {
+      display: flex;
+      margin-bottom: 1rem;
+
+      div {
+        flex-wrap: wrap;
+        margin: 0.5rem;
+        img {
+          height: 50px;
+        }
       }
     }
   }
