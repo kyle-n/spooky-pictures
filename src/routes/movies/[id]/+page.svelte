@@ -10,6 +10,14 @@
   const bannerUrl = $derived(
     'https://image.tmdb.org/t/p/original' + data.details.backdrop_path
   );
+
+  $effect(() => {
+    const desktopMetadataContainer = document.getElementById('desktop-metadata') as HTMLDivElement;
+    const bannerSection = document.getElementById('banner') as HTMLElement;
+    if (desktopMetadataContainer.clientHeight > bannerSection.clientHeight) {
+      bannerSection.style.height = (desktopMetadataContainer.clientHeight + 50) + 'px';
+    }
+  })
 </script>
 
 <PageTitle content="{data.details.title}" />
