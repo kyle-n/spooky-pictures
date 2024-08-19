@@ -1,4 +1,3 @@
-import { readFile } from 'fs/promises';
 import showdown from 'showdown';
 import { videoMovieMap } from '../details/videos';
 

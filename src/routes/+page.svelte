@@ -2,6 +2,7 @@
   import MovieList from '$lib/components/movie-list.svelte';
   import PageTitle from '$lib/components/page-title.svelte';
   import PeopleList from '$lib/components/people-list.svelte';
+  import SiteIntro from '$lib/components/site-intro.svelte';
   import type { ResolvedOscarCategoryList } from '$lib/types/resolved-data';
 
   let { data } = $props<{ data: ResolvedOscarCategoryList }>();
@@ -9,6 +10,9 @@
 
 <PageTitle content="Home" />
 
+<div id="intro-container">
+  <SiteIntro />
+</div>
 {#each data.categories as category}
   <section>
     <h2>{category.name}</h2>
@@ -23,6 +27,13 @@
 
 <style lang="scss">
   @use 'src/app' as globals;
+
+  #intro-container {
+    display: flex;
+    justify-content: center;
+    margin: globals.$main-spacing;
+  }
+
   section {
     margin: globals.$main-spacing 5rem;
     margin-bottom: globals.$main-spacing * 2;
