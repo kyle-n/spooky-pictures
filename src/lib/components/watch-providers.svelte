@@ -65,10 +65,11 @@
     }
     .provider-category {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       margin-bottom: 1rem;
 
       div {
-        flex-wrap: wrap;
         margin: 0.5rem;
         img {
           height: 50px;
