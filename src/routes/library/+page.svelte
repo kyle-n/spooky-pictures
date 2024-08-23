@@ -8,7 +8,7 @@
   let { data } = $props<{ data: ResolvedOscarCategoryList }>();
 </script>
 
-<PageTitle content="Home" />
+<PageTitle content="Library" />
 
 <div id="intro-container">
   <SiteIntro />

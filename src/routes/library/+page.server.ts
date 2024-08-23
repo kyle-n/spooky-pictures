@@ -9,7 +9,7 @@ import type {
   ResolvedOscarCategoryList
 } from '$lib/types/resolved-data';
 import { removeYearFromListName } from '$lib/utils';
-import { homepageLists } from '../details/lists';
+import { homepageLists } from '../../details/lists';
 
 export async function load(): Promise<ResolvedOscarCategoryList> {
   const categories: Array<OscarCategory | PeopleCategory> = [];
