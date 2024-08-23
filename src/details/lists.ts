@@ -5,6 +5,7 @@ export const homepageLists: HomepageList[] = [
   { name: 'Legendary directors', tmdbIds: [11770] },
   { tmdbId: 8310775, internalLabel: 'comedies' },
   { tmdbId: 8310776, internalLabel: 'classics' },
+  { name: 'Final girls', tmdbIds: [10205] },
   { tmdbId: 8310777, internalLabel: 'scary-silly' },
-  { tmdbId: 8310778, internalLabel: 'political' },
+  { tmdbId: 8310778, internalLabel: 'political' }
 ];
