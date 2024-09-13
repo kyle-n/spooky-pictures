@@ -36,12 +36,28 @@
 </div>
 
 <style lang="scss">
+  @use 'src/app' as globals;
+
+  $col-width: 200px;
+
   #calendar-list {
     display: grid;
-    grid-template-columns: repeat(7, 200px);
+      grid-template-columns: repeat(2, $col-width);
     gap: 1rem;
     margin: 4rem auto 0 auto;
     width: fit-content;
+
+    @media screen and (min-width: 620px) {
+      grid-template-columns: repeat(3, $col-width);
+    }
+
+    @media screen and (min-width: 1025px) {
+      grid-template-columns: repeat(4, $col-width);
+    }
+
+    @media screen and (min-width: 1400px) {
+      grid-template-columns: repeat(7, 1fr);
+    }
   }
 
   .calendar-day {
