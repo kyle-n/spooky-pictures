@@ -15,7 +15,13 @@ class TMDBConnector {
 
   async getList(tmdbListId: number): Promise<TMDBList> {
     const url = `https://api.themoviedb.org/3/list/${tmdbListId}`;
-    return this.getData(url);
+    const response: TMDBList = await this.getData(url);
+    if (response.page < response.total_pages) {
+      const nextPage = response.page + 1;
+      const nextResponse = await this.getData(url, nextPage);
+      response.items.push(...nextResponse.items);
+    }
+    return response;
   }
 
   async getMovieDetails(tmdbMovieId: number): Promise<TMDBMovieDetails> {
@@ -53,11 +59,16 @@ class TMDBConnector {
     return this.getData(url);
   }
 
-  private async getData(url: string): Promise<any> {
+  private async getData(url: string, page?: number): Promise<any> {
     const headers = {
       Authorization: `Bearer ${this.readToken}`
     };
-    const response = await fetch(url, { headers });
+    const urlParams = new URLSearchParams();
+    if (page) {
+      urlParams.set('page', page.toString());
+    }
+    const urlWithParams = `${url}?${urlParams.toString()}`;
+    const response = await fetch(urlWithParams, { headers });
     return await response.json();
   }
 }
