@@ -2,8 +2,6 @@
   import { SITE_NAME } from '$lib/site-metadata';
 
   export let content: string;
-
-
 </script>
 
 <svelte:head>
