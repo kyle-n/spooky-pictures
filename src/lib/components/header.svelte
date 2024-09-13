@@ -1,7 +1,12 @@
 <header>
-  <a href="/">
-    <h1><span id="spooky">Spooky</span>.<span id="pictures">pictures</span></h1>
-  </a>
+  <div>
+    <a href="/">
+      <h1>
+        <span id="spooky">Spooky</span>.<span id="pictures">pictures</span>
+      </h1>
+    </a>
+    <p>A scary movie every day in October!</p>
+  </div>
 </header>
 
 <style lang="scss">
@@ -11,6 +16,12 @@
     padding: 2em;
     background-image: url('/img/curtains.jpg');
     background-repeat: no-repeat;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     a {
       color: white;

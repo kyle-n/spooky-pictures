@@ -42,7 +42,7 @@
 
   #calendar-list {
     display: grid;
-      grid-template-columns: repeat(2, $col-width);
+    grid-template-columns: repeat(2, $col-width);
     gap: 1rem;
     margin: 4rem auto 0 auto;
     width: fit-content;
