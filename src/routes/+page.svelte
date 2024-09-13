@@ -4,6 +4,7 @@
   import MoviePoster from '$lib/components/movie-poster.svelte';
   import { onMount } from 'svelte';
   import type { TMDBMovie } from '$lib/types/tmdb-movie';
+  import SiteIntro from '$lib/components/site-intro.svelte';
 
   const { data } = $props<{ data: ResolvedCalendarData }>();
   let unlockedMovies = $state<TMDBMovie[]>([]);
@@ -29,6 +30,9 @@
       </div>
     {/each}
   </div>
+  <div id="intro-container">
+    <SiteIntro />
+  </div>
 </div>
 
 <style lang="scss">
@@ -49,5 +53,11 @@
   .date-number {
     display: flex;
     justify-content: center;
+  }
+
+  #intro-container {
+    min-width: 20em;
+    max-width: 40em;
+    margin: 2rem auto 0 auto;
   }
 </style>

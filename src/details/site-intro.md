@@ -1,9 +1,12 @@
-Welcome to **Spooky.pictures**! This is a goofy website for celebrating Halloween and scary movies of all kinds. 
+Welcome to **Spooky.pictures**!
 
-I love horror movies, so I wrote a website to help other people find one to watch this October. 
+I love horror movies, so I made this website to help people find some to watch.
+
+Come back every day for a new horror movie to watch! Some are scary, some are funny, but all of them are worth your time.
 
 Click a film to view:
 
-- Its description, cast and trailer
 - Streaming links
+- Description and cast
+- The trailer
 - Hand-curated reviews from top critics
