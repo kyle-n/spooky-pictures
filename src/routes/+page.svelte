@@ -9,9 +9,6 @@
 <PageTitle content="Calendar" />
 
 <div id="calendar">
-  <div id="calendar-header">
-    <h2>A Scary Movie Every Day in October</h2>
-  </div>
   <div id="calendar-list">
     {#each data.list.items as movie, i}
     <div>
@@ -27,15 +24,11 @@
 </div>
 
 <style lang="scss">
-  #calendar-header {
-    margin-top: 2rem;
-  }
-
   #calendar-list {
     display: grid;
     grid-template-columns: repeat(7, 200px);
     gap: 1rem;
-    margin: 0 auto;
+    margin: 4rem auto 0 auto;
     width: fit-content;
   }
 
