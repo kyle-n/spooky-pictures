@@ -28,8 +28,10 @@
 
   #calendar-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(7, 200px);
     gap: 1rem;
+    margin: 0 auto;
+    width: fit-content;
   }
 
   .calendar-day {
