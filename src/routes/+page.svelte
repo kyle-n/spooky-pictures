@@ -10,13 +10,18 @@
 
 <div id="calendar">
   <div id="calendar-header">
-    <h2>Scary Movie of the Day</h2>
+    <h2>A Scary Movie Every Day in October</h2>
   </div>
   <div id="calendar-list">
-    {#each data.list.items as movie}
+    {#each data.list.items as movie, i}
+    <div>
+      <div class="date-number">
+      <h3>{i + 1}</h3>
+      </div>
       <div class="calendar-day">
         <MoviePoster {movie} />
       </div>
+    </div>
     {/each}
   </div>
 </div>
@@ -36,5 +41,11 @@
 
   .calendar-day {
     border: 1px solid white;
+    margin-bottom: 3rem;
+  }
+
+  .date-number {
+    display: flex;
+    justify-content: center;
   }
 </style>
