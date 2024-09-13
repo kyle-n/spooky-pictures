@@ -42,6 +42,7 @@
   .calendar-day {
     border: 1px solid white;
     margin-bottom: 3rem;
+    height: 302px;
   }
 
   .date-number {
