@@ -5,6 +5,7 @@
   import { onMount } from 'svelte';
   import type { TMDBMovie } from '$lib/types/tmdb-movie';
   import SiteIntro from '$lib/components/site-intro.svelte';
+  import TagList from '$lib/components/tag-list.svelte';
 
   const { data } = $props<{ data: ResolvedCalendarData }>();
   let unlockedMovies = $state<TMDBMovie[]>([]);
@@ -27,6 +28,7 @@
         <div class="calendar-day">
           <MoviePoster {movie} />
         </div>
+        <TagList tmdbMovieId={movie.id} />
       </div>
     {/each}
   </div>

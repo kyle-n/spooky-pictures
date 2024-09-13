@@ -25,10 +25,16 @@ export enum MovieTag {
   Cosmic
 }
 
-export const tags = {
+export const tags: Record<number, MovieTag[]> = {
   747: [MovieTag.Comedy, MovieTag.Zombie, MovieTag.Romance],
   9003: [MovieTag.Women, MovieTag.Gory, MovieTag.Queer],
   539: [MovieTag.Classic, MovieTag.Slasher, MovieTag.Women, MovieTag.Family],
   270303: [MovieTag.Women, MovieTag.ExtraScary, MovieTag.Artsy],
-  348: [MovieTag.Classic, MovieTag.Scifi, MovieTag.Women, MovieTag.Gory, MovieTag.Monster]
-}
+  348: [
+    MovieTag.Classic,
+    MovieTag.Scifi,
+    MovieTag.Women,
+    MovieTag.Gory,
+    MovieTag.Monster
+  ]
+};
