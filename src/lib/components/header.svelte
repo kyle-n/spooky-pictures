@@ -1,4 +1,9 @@
+<script>
+  import Nav from './nav.svelte';
+
+</script>
 <header>
+  <div></div>
   <div>
     <a href="/">
       <h1>
@@ -7,12 +12,14 @@
     </a>
     <p>A scary movie every day in October!</p>
   </div>
+  <Nav />
 </header>
 
 <style lang="scss">
   header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 2em;
     background-image: url('/img/curtains.jpg');
     background-repeat: no-repeat;
