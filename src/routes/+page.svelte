@@ -62,6 +62,10 @@
     }
   }
 
+  #calendar {
+    padding: globals.$main-spacing;
+  }
+
   .calendar-day {
     border: 1px solid white;
     margin-bottom: 3rem;
