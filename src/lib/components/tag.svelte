@@ -87,11 +87,11 @@
 <style lang="scss">
   div {
     background-color: var(--backgroundColor);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    margin: 0.5rem;
     color: var(--textColor);
     mix-blend-mode: difference;
+    width: fit-content;
   }
 
   .rainbow {
