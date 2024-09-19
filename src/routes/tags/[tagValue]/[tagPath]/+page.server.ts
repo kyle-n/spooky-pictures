@@ -12,7 +12,8 @@ export async function load({ params }): Promise<ResolvedTagPageData> {
     .map(([tmdbMovieId, tags]) => Number(tmdbMovieId));
   const movies: Array<TMDBMovieDetails> = [];
   for await (const tmdbMovieId of tmdbMovieIds) {
-    movies.push(await TMDBConnector.getMovieDetails(tmdbMovieId));
+    const details = await TMDBConnector.getMovieDetails(tmdbMovieId);
+    movies.push(details);
   }
   return {
     tag,

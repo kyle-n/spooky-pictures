@@ -79,7 +79,7 @@
     return color;
   });
 
-  let href = $derived('tags/' + tagNames[tag].toLowerCase().replace(/ /g, '-'));
+  let href = $derived('tags/' + tag + '/' + tagNames[tag].toLowerCase().replace(/ /g, '-'));
 </script>
 
 <a {href}>
