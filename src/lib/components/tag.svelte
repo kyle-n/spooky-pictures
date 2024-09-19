@@ -1,68 +1,46 @@
 <script lang="ts">
   import { MovieTag } from '../../details/tags';
 
-  let { tag } = $props<{ tag: MovieTag }>();
+  type Props = {
+    tag: MovieTag;
+  };
 
-  function getNameForTag(tag: MovieTag) {
-    switch (tag) {
-      case MovieTag.Comedy:
-        return 'Comedy';
-      case MovieTag.Slasher:
-        return 'Slasher';
-      case MovieTag.PG13:
-        return 'PG-13';
-      case MovieTag.Zombie:
-        return 'Zombie';
-      case MovieTag.Romance:
-        return 'Romance';
-      case MovieTag.Women:
-        return 'Starring Women';
-      case MovieTag.Gory:
-        return 'Gory';
-      case MovieTag.Queer:
-        return 'Queer Horror';
-      case MovieTag.Scifi:
-        return 'Sci-Fi';
-      case MovieTag.Classic:
-        return 'Classic';
-      case MovieTag.Monster:
-        return 'Monster';
-      case MovieTag.ExtraScary:
-        return 'Extra Scary';
-      case MovieTag.SillyScary:
-        return 'Silly and Scary';
-      case MovieTag.Trauma:
-        return "It's About Trauma ™️";
-      case MovieTag.Kids:
-        return 'For Kids';
-      case MovieTag.Artsy:
-        return 'Artsy';
-      case MovieTag.Family:
-        return 'Family Scares';
-      case MovieTag.International:
-        return 'International';
-      case MovieTag.Vampire:
-        return 'Vampire';
-      case MovieTag.ZeroScares:
-        return 'Zero Scares';
-      case MovieTag.Political:
-        return 'Thoughts About Politics';
-      case MovieTag.PoC:
-        return 'Starring People of Color';
-      case MovieTag.Musical:
-        return 'Musical';
-      case MovieTag.Cosmic:
-        return 'Cosmic Horror';
-    }
-  }
+  let { tag }: Props = $props();
+
+  const tagNames: Record<MovieTag, string> = {
+    [MovieTag.Comedy]: 'Comedy',
+    [MovieTag.Slasher]: 'Slasher',
+    [MovieTag.PG13]: 'PG-13',
+    [MovieTag.Zombie]: 'Zombie',
+    [MovieTag.Romance]: 'Romance',
+    [MovieTag.Women]: 'Starring Women',
+    [MovieTag.Gory]: 'Gory',
+    [MovieTag.Queer]: 'Queer Horror',
+    [MovieTag.Scifi]: 'Sci-Fi',
+    [MovieTag.Classic]: 'Classic',
+    [MovieTag.Monster]: 'Monster',
+    [MovieTag.ExtraScary]: 'Extra Scary',
+    [MovieTag.SillyScary]: 'Silly and Scary',
+    [MovieTag.Trauma]: "It's About Trauma ™️",
+    [MovieTag.Kids]: 'For Kids',
+    [MovieTag.Artsy]: 'Artsy',
+    [MovieTag.Family]: 'Family Scares',
+    [MovieTag.International]: 'International',
+    [MovieTag.Vampire]: 'Vampire',
+    [MovieTag.ZeroScares]: 'Zero Scares',
+    [MovieTag.Political]: 'Thoughts About Politics',
+    [MovieTag.PoC]: 'Starring People of Color',
+    [MovieTag.Musical]: 'Musical',
+    [MovieTag.Cosmic]: 'Cosmic Horror'
+  };
 </script>
 
-<div class="tag">
-  {getNameForTag(tag)}
+<div>
+  {tagNames[tag]}
 </div>
 
 <style lang="scss">
-  .tag {
+  div {
     background-color: yellowgreen;
     padding: 0.5rem;
     border-radius: 0.5rem;
