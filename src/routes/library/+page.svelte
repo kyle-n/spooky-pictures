@@ -11,7 +11,7 @@
 <PageTitle content="Library" />
 
 <div id="intro-container">
-  <SiteIntro />
+  <p>Want more than one recommendation a day? Check out these other great horror flicks.</p>
 </div>
 {#each data.categories as category}
   <section>
