@@ -1,3 +1,4 @@
+import { MovieTag } from '../../details/tags';
 import type { TMDBList } from './tmdb-list';
 import type { TMDBMovie } from './tmdb-movie';
 import type { TMDBMovieCredits } from './tmdb-movie-credits';
@@ -45,4 +46,9 @@ export type ResolvedSiteCredits = {
 
 export type ResolvedCalendarData = {
   list: TMDBList;
+}
+
+export type ResolvedTagPageData = {
+  tag: MovieTag;
+  movies: TMDBMovieDetails[];
 }
