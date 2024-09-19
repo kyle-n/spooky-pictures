@@ -61,28 +61,35 @@
     [MovieTag.Cosmic]: 'darkgold'
   };
 
-  let textColor = 'white';
-  if (
-    [
-      MovieTag.Comedy,
-      MovieTag.Romance,
-      MovieTag.Scifi,
-      MovieTag.Artsy,
-      MovieTag.Queer,
-      MovieTag.Family,
-      MovieTag.Classic
-    ].includes(tag)
-  ) {
-    textColor = 'black';
-  }
+  let textColor = $derived.by(() => {
+    let color = 'white';
+    if (
+      [
+        MovieTag.Comedy,
+        MovieTag.Romance,
+        MovieTag.Scifi,
+        MovieTag.Artsy,
+        MovieTag.Queer,
+        MovieTag.Family,
+        MovieTag.Classic
+      ].includes(tag)
+    ) {
+      color = 'black';
+    }
+    return color;
+  });
+
+  let href = $derived('tags/' + tagNames[tag].toLowerCase().replace(/ /g, '-'));
 </script>
 
-<div
-  style="--backgroundColor: {tagColors[tag]}; --textColor: {textColor}"
-  class:rainbow={tag === MovieTag.Queer}
->
-  {tagNames[tag]}
-</div>
+<a {href}>
+  <div
+    style="--backgroundColor: {tagColors[tag]}; --textColor: {textColor}"
+    class:rainbow={tag === MovieTag.Queer}
+  >
+    {tagNames[tag]}
+  </div>
+</a>
 
 <style lang="scss">
   div {

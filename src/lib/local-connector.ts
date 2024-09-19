@@ -1,5 +1,6 @@
 import showdown from 'showdown';
 import { videoMovieMap } from '../details/videos';
+import { MovieTag } from '../details/tags';
 
 const converter = new showdown.Converter({
   openLinksInNewWindow: true,
