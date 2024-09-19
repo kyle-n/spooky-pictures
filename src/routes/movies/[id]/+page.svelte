@@ -16,9 +16,11 @@
       'desktop-metadata'
     ) as HTMLDivElement;
     const bannerSection = document.getElementById('banner') as HTMLElement;
-    if (desktopMetadataContainer.clientHeight > bannerSection.clientHeight) {
+    console.log(desktopMetadataContainer.clientHeight, bannerSection.clientHeight);
+    const offset = 50;
+    if (desktopMetadataContainer.clientHeight + offset > bannerSection.clientHeight) {
       bannerSection.style.height =
-        desktopMetadataContainer.clientHeight + 50 + 'px';
+        desktopMetadataContainer.clientHeight + offset + 'px';
     }
   });
 </script>

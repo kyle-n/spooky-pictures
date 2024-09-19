@@ -1,8 +1,8 @@
 Welcome to **Spooky.pictures**!
 
-I love horror movies, so I made this website to help people find some to watch.
+Want recommendations for something to watch this October? Come back every day for a new scary movie! Some are freaky, some are funny, but all of them are worth your time.
 
-Come back every day for a new horror movie to watch! Some are scary, some are funny, but all of them are worth your time.
+I'm a big horror movie fan and spent tons of time hand-curating this list.
 
 Click a film to view:
 
