@@ -103,6 +103,8 @@
     flex-direction: row-reverse;
     justify-content: center;
     padding: globals.$main-spacing;
+    position: relative;
+    z-index: -1;
 
     @media (max-width: globals.$mobile) {
       flex-direction: column;
