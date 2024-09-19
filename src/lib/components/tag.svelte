@@ -39,18 +39,18 @@
     [MovieTag.Slasher]: 'red',
     [MovieTag.PG13]: 'blue',
     [MovieTag.Zombie]: 'green',
-    [MovieTag.Romance]: 'pink',
+    [MovieTag.Romance]: 'hotpink',
     [MovieTag.Women]: 'purple',
-    [MovieTag.Gory]: 'black',
+    [MovieTag.Gory]: 'indianred',
     [MovieTag.Queer]: 'rainbow',
     [MovieTag.Scifi]: 'silver',
     [MovieTag.Classic]: 'gold',
-    [MovieTag.Monster]: 'brown',
+    [MovieTag.Monster]: 'midnightblue',
     [MovieTag.ExtraScary]: 'darkred',
     [MovieTag.SillyScary]: 'orange',
     [MovieTag.Trauma]: 'darkgrey',
     [MovieTag.Kids]: 'lightblue',
-    [MovieTag.Artsy]: 'lightgrey',
+    [MovieTag.Artsy]: 'aquamarine',
     [MovieTag.Family]: 'lightgreen',
     [MovieTag.International]: 'lightyellow',
     [MovieTag.Vampire]: 'darkpurple',
@@ -68,7 +68,9 @@
       MovieTag.Romance,
       MovieTag.Scifi,
       MovieTag.Artsy,
-      MovieTag.Queer
+      MovieTag.Queer,
+      MovieTag.Family,
+      MovieTag.Classic
     ].includes(tag)
   ) {
     textColor = 'black';
