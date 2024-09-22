@@ -27,7 +27,7 @@
       Born {birthday} in {details.place_of_birth}
     </div>
     <p>{age} years old</p>
-    <h3>Known for</h3>
+    <h3>Most popular projects</h3>
     <ul>
       {#each knownForCredits as credit}
         <li>
