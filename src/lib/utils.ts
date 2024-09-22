@@ -41,9 +41,8 @@ export function tmdbMostKnownRoles(
   return jobs
     .filter(credit => new Date(credit.release_date) < now)
     .sort((a, b) => {
-      return b.vote_count - a.vote_count;
+      return b.popularity - a.popularity;
     })
-    .filter(credit => credit.vote_average > 7)
     .slice(0, 5);
 }
 
