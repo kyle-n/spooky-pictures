@@ -134,3 +134,6 @@ dist
 
 # Svelte
 .svelte-kit
+
+# Cloudflare
+.wrangler
