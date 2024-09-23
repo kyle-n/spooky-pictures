@@ -1,5 +1,10 @@
 on: [push]
 
+env:
+  VITE_TMDB_API_KEY: ${{ secrets.VITE_TMDB_API_KEY }}
+  VITE_TMDB_API_READ_TOKEN: ${{ secrets.VITE_TMDB_API_READ_TOKEN }}
+  VITE_DTDD_API_KEY: ${{ secrets.VITE_DTDD_API_KEY }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
