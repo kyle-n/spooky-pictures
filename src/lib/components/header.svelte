@@ -23,6 +23,8 @@
   header {
     background-image: url('/img/curtains.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
+
     display: flex;
     flex-direction: column;
       align-items: center;
