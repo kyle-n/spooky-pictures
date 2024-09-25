@@ -4,10 +4,15 @@
   import type { TMDBMovieDetails } from '$lib/types/tmdb-movie-details';
   import MovieMetadataTable from './movie-metadata-table.svelte';
 
-  let { details, credits } = $props<{
+  let {
+    details,
+    credits,
+    dtddLink
+  }: {
     details: TMDBMovieDetails;
     credits: TMDBMovieCredits;
-  }>();
+    dtddLink: string | undefined;
+  } = $props();
   const directors = $derived(
     credits.crew
       .filter(person => person.job?.toLowerCase() === 'director')
@@ -18,27 +23,35 @@
   const encodedTitle = $derived(
     encodeURIComponent(details.title.toLowerCase())
   );
-  const referenceLinks = $derived([
-    {
-      name: 'Metacritic',
-      href: `https://www.metacritic.com/search/${encodedTitle}?page=1&category=2`
-    },
-    {
-      name: 'IMDB',
-      href: `https://www.imdb.com/title/${details.imdb_id}`
-    },
-    {
-      name: 'Letterboxd',
-      href: `https://letterboxd.com/tmdb/${details.id}/`
+  const referenceLinks = $derived.by(() => {
+    const links = [
+      {
+        name: 'Metacritic',
+        href: `https://www.metacritic.com/search/${encodedTitle}?page=1&category=2`
+      },
+      {
+        name: 'IMDB',
+        href: `https://www.imdb.com/title/${details.imdb_id}`
+      },
+      {
+        name: 'Letterboxd',
+        href: `https://letterboxd.com/tmdb/${details.id}/`
+      }
+    ];
+    if (dtddLink !== undefined) {
+      links.push({
+        name: 'Content Warnings',
+        href: dtddLink
+      });
     }
-  ]);
+    return links;
+  });
 </script>
 
 <div id="metadata" class="rounded">
   <p>Directed by <strong>{directors}</strong></p>
   <p><em>{details.tagline}</em></p>
   <MovieMetadataTable {details} />
-  <ul />
   <p>{details.overview}</p>
   <div id="cast-list-container">
     <CastList cast={credits.cast} />

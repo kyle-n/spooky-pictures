@@ -1,5 +1,6 @@
 import TMDBConnector from '$lib/tmdb-connector';
 import LocalConnector from '$lib/local-connector';
+import DTDDConnector from '$lib/dtdd-connector';
 import type { ResolvedMovieDetails } from '$lib/types/resolved-data.js';
 
 export async function load({ params }): Promise<ResolvedMovieDetails> {
@@ -9,5 +10,9 @@ export async function load({ params }): Promise<ResolvedMovieDetails> {
   const watchProviders = await TMDBConnector.getMovieWatchProviders(movieId);
   const videos = await TMDBConnector.getMovieVideos(movieId);
   const reviewHtml = await LocalConnector.reviewQuotes(movieId);
-  return { details, credits, watchProviders, reviewHtml, videos };
+  const dtddLink = await DTDDConnector.getDTDDLinkForMovie(
+    movieId,
+    details.title
+  );
+  return { details, credits, watchProviders, reviewHtml, videos, dtddLink };
 }

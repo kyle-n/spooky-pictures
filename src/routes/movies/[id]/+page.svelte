@@ -6,7 +6,7 @@
   import WatchProviders from '$lib/components/watch-providers.svelte';
   import type { ResolvedMovieDetails } from '$lib/types/resolved-data';
 
-  let { data } = $props<{ data: ResolvedMovieDetails }>();
+  let { data }: { data: ResolvedMovieDetails } = $props();
   const bannerUrl = $derived(
     'https://image.tmdb.org/t/p/original' + data.details.backdrop_path
   );
@@ -16,9 +16,15 @@
       'desktop-metadata'
     ) as HTMLDivElement;
     const bannerSection = document.getElementById('banner') as HTMLElement;
-    console.log(desktopMetadataContainer.clientHeight, bannerSection.clientHeight);
+    console.log(
+      desktopMetadataContainer.clientHeight,
+      bannerSection.clientHeight
+    );
     const offset = 50;
-    if (desktopMetadataContainer.clientHeight + offset > bannerSection.clientHeight) {
+    if (
+      desktopMetadataContainer.clientHeight + offset >
+      bannerSection.clientHeight
+    ) {
       bannerSection.style.height =
         desktopMetadataContainer.clientHeight + offset + 'px';
     }
@@ -33,7 +39,11 @@
       <h2 class="rounded">{data.details.title}</h2>
     </CalloutBox>
     <CalloutBox>
-      <Credits details={data.details} credits={data.credits} />
+      <Credits
+        details={data.details}
+        credits={data.credits}
+        dtddLink={data.dtddLink}
+      />
     </CalloutBox>
   </div>
 </section>
@@ -42,7 +52,11 @@
     <h2 class="rounded">{data.details.title}</h2>
   </CalloutBox>
   <CalloutBox>
-    <Credits details={data.details} credits={data.credits} />
+    <Credits
+      details={data.details}
+      credits={data.credits}
+      dtddLink={data.dtddLink}
+    />
   </CalloutBox>
 </section>
 <section id="main">

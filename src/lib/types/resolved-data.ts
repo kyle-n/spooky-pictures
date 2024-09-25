@@ -27,6 +27,7 @@ export type ResolvedMovieDetails = {
   watchProviders: TMDBWatchProvidersResponse;
   reviewHtml: string;
   videos: TMDBVideo[];
+  dtddLink: string | undefined;
 };
 
 export type ResolvedPersonDetails = {
@@ -46,9 +47,9 @@ export type ResolvedSiteCredits = {
 
 export type ResolvedCalendarData = {
   list: TMDBList;
-}
+};
 
 export type ResolvedTagPageData = {
   tag: MovieTag;
   movies: TMDBMovieDetails[];
-}
+};
