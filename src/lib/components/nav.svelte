@@ -27,15 +27,29 @@
 </nav>
 
 <style lang="scss">
+  @use 'src/app' as globals;
+
   ul {
     margin-bottom: 0;
+    display: flex;
+
+    @media screen and (min-width: globals.$mobile) {
+      display: block;
+    }
   }
 
   li {
     list-style-type: none;
+    margin-right: globals.$main-spacing;
+
+    @media screen and (min-width: globals.$mobile) {
+      display: block;
+      margin-right: 0;
+    }
 
     &:last-child {
       margin-bottom: 0;
+      margin-right: 0;
     }
   }
 </style>

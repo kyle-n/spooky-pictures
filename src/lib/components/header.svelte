@@ -1,7 +1,7 @@
 <script>
   import Nav from './nav.svelte';
-
 </script>
+
 <header>
   <div></div>
   <div>
@@ -12,17 +12,26 @@
     </a>
     <p>A scary movie every day in October!</p>
   </div>
+  <div id="nav-container">
   <Nav />
+  </div>
 </header>
 
 <style lang="scss">
+  @use 'src/app' as globals;
+
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em;
     background-image: url('/img/curtains.jpg');
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+      align-items: center;
+    padding: globals.$main-spacing;
+
+    @media screen and (min-width: globals.$mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     div {
       display: flex;
@@ -42,5 +51,9 @@
   #pictures {
     font-weight: normal;
     font-style: italic;
+  }
+
+  #nav-container {
+    max-width: fit-content;
   }
 </style>
