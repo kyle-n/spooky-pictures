@@ -10,3 +10,4 @@ Click a film to view:
 - Description and cast
 - The trailer
 - Hand-curated reviews from top critics
+- Content warnings
