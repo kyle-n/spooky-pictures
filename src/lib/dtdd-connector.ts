@@ -11,7 +11,7 @@ class DTDDConnector {
     )}`;
     const headers = {
       Accept: 'application/json',
-      'X-API-KEY': process.env.VITE_DTDD_API_KEY as string
+      'X-API-KEY': import.meta.env.VITE_DTDD_API_KEY as string
     };
     const rawSearchResponse = await fetch(searchUrl, { headers });
     const searchResponse: DTDDSearchResponse = await rawSearchResponse.json();
