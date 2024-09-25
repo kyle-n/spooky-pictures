@@ -26,7 +26,7 @@
           <h3>{i + 1}</h3>
         </div>
         <div class="calendar-day">
-          <MoviePoster {movie} />
+          <MoviePoster {movie} bordered />
         </div>
         <TagList tmdbMovieId={movie.id} />
       </div>
@@ -67,7 +67,6 @@
   }
 
   .calendar-day {
-    border: 1px solid white;
     margin-bottom: 3rem;
     height: 302px;
   }
