@@ -25,8 +25,15 @@
 
   #movie-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: fit-content;
+    margin: 0 auto;
     gap: globals.$main-spacing;
     padding: globals.$main-spacing;
+    grid-template-columns: repeat(1, 1fr);
+    
+    @media screen and (min-width: globals.$mobile) {
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
   }
 </style>
