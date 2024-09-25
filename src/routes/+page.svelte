@@ -21,11 +21,11 @@
 <div id="calendar">
   <div id="calendar-list">
     {#each unlockedMovies as movie, i}
-      <div>
+      <div class="calendar-day">
         <div class="date-number">
           <h3>{i + 1}</h3>
         </div>
-        <div class="calendar-day">
+        <div class="calendar-day-poster-container">
           <MoviePoster {movie} bordered />
         </div>
         <TagList tmdbMovieId={movie.id} />
@@ -44,7 +44,7 @@
 
   #calendar-list {
     display: grid;
-    grid-template-columns: repeat(2, $col-width);
+    grid-template-columns: repeat(2, 150px);
     gap: 1rem;
     margin: 4rem auto 0 auto;
     width: fit-content;
@@ -66,9 +66,17 @@
     padding: globals.$main-spacing;
   }
 
-  .calendar-day {
+  .calendar-day-poster-container {
     margin-bottom: 3rem;
-    height: 302px;
+    height: globals.$mobile-poster-height;
+
+    @media screen and (min-width: globals.$mobile) {
+      height: globals.$desktop-poster-height;
+    }
+  }
+
+  .calendar-day {
+    margin-bottom: globals.$main-spacing;
   }
 
   .date-number {

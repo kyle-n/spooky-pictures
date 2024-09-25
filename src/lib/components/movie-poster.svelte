@@ -22,9 +22,15 @@
 </a>
 
 <style lang="scss">
+  @use 'src/app' as globals;
+
   img {
-    height: 30rem;
+    height: globals.$mobile-poster-height;
     border: solid white;
     border-width: var(--border-width);
+
+    @media screen and (min-width: globals.$mobile) {
+      height: globals.$desktop-poster-height;
+    }
   }
 </style>
