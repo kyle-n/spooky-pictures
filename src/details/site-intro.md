@@ -11,3 +11,4 @@ Click a film to view:
 - The trailer
 - Hand-curated reviews from top critics
 - Content warnings
+- Memes and fun facts
