@@ -97,6 +97,8 @@
 
     @media (min-width: globals.$mobile) {
       display: block;
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -118,7 +120,7 @@
     justify-content: center;
     padding: globals.$main-spacing;
     position: relative;
-    z-index: -1;
+    z-index: 1;
 
     @media (max-width: globals.$mobile) {
       flex-direction: column;
