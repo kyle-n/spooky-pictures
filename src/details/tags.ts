@@ -36,5 +36,18 @@ export const tags: Record<number, MovieTag[]> = {
     MovieTag.Women,
     MovieTag.Gory,
     MovieTag.Monster
+  ],
+  798286: [
+    MovieTag.SillyScary,
+    MovieTag.Trauma,
+    MovieTag.Family,
+    MovieTag.Artsy
+  ],
+  83899: [
+    MovieTag.Slasher,
+    MovieTag.Women,
+    MovieTag.Gory,
+    MovieTag.Family,
+    MovieTag.Political
   ]
 };
