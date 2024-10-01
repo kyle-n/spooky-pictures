@@ -12,7 +12,7 @@
 
   onMount(() => {
     const dayOfMonth = new Date().getDate();
-    unlockedMovies = data.list.items.slice(0, dayOfMonth);
+    unlockedMovies = data.list.items.slice(0, (dayOfMonth % 7) * 7);
   });
 </script>
 
