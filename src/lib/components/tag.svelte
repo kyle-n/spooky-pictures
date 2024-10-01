@@ -24,11 +24,11 @@
     [MovieTag.Trauma]: "It's About Trauma ™️",
     [MovieTag.Kids]: 'For Kids',
     [MovieTag.Artsy]: 'Artsy',
-    [MovieTag.Family]: 'Family Scares',
+    [MovieTag.Family]: 'Families Are Terrifying',
     [MovieTag.International]: 'International',
     [MovieTag.Vampire]: 'Vampire',
     [MovieTag.ZeroScares]: 'Zero Scares',
-    [MovieTag.Political]: 'Thoughts About Politics',
+    [MovieTag.Political]: 'Has Thoughts About Politics',
     [MovieTag.PoC]: 'Starring People of Color',
     [MovieTag.Musical]: 'Musical',
     [MovieTag.Cosmic]: 'Cosmic Horror'
